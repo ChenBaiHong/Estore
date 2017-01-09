@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.walkerChen.estore.bean.substance.Orders" table="Orders" >
+        <id name="id" column="id" length="40">
+            <generator class="uuid"/>
+        </id>
+        <property name="orderTime" column="orderTime" type="java.sql.Date"></property>
+        <property name="state" column="state"></property>
+        <property name="money" column="money" type="java.lang.Double"></property>
+        <property name="receiverinfo" column="receiverinfo" length="255"></property>
+        <many-to-one name="user"  class="com.walkerChen.estore.bean.substance.User" column="user_id" cascade="all" fetch="join" lazy="no-proxy"></many-to-one>
+        <!-- 
+        	请吸取经验教训！
+        		1. cascade="all" 和 fetch="join"必须同在，这样才能级联它的关联表
+         -->
+        <set name="orderItems"  cascade="all" fetch="join">
+            <key column="oid"></key>
+            <one-to-many class="com.walkerChen.estore.bean.substance.OrderItem"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

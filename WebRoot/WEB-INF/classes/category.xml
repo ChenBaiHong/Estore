@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="category" namespace="/" extends="json-default">
+			<action name="handlerCategoryCheckAction" class="categoryAction"
+			method="addCategoryCheck">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="handlerCategoryTarget" class="categoryAction" method="handlerCategory">
+				<result>/WEB-INF/backstage/category/handlerCategory.jsp</result>
+			</action>
+			<action name="fetchSubcategoryAction" class="categoryAction"
+			method="fetchSubcategory">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="saveCategoryFormAction" class="categoryAction"
+			method="saveCategoryForm">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="updateCategoryFormAction" class="categoryAction"
+			method="updateCategoryForm">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="deleteCategoryFormAction" class="categoryAction"
+			method="deleteCategoryForm">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="updateCategoryImgAction" class="categoryAction"
+			method="updateCategoryImg">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="showCategoryImgAction" class="categoryAction">
+				<result type="stream">
+					<param name="inputStream">${inputStream}</param>
+				</result>
+			</action>
+		</package>
+</struts>

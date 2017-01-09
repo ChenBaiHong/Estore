@@ -1,0 +1,109 @@
+创建实体表
+	entitativeTable
+
+
+create database CosmeticEstore;
+
+use CosmeticEstore;
+
+create table Category(
+	cid varChar(40) primary key,
+	name varChar(40) unique  not null,
+	layer int,
+	parentId varChar(40),
+	profile varChar(50)
+);
+create table brand(
+	id varchar(40),
+	name  varchar(40),
+	description varchar(220)
+);
+//产品和分类是多对多的关系
+create table prod_cate(
+	pno varchar(40),
+	cno varchar(40),
+	primary key(pno , cno),
+	foreign key(pno_id) references product(id),
+	foreign key(cno_id) references category(cid)
+);
+create table Product(
+	id varChar(40) primary key,
+	name varChar(100) not null,
+	price decimal(8 , 1) not null ,
+	iconurl varChar(225) not null,
+	quantity int not null,
+	totalSaleNum int null,
+	description varChar(225),
+	category_id varChar(40),
+	foreign key(brand_id) references brand(id)
+);
+
+create table user(
+	id varChar(40) primary key,
+	username varChar(25) unique not null,
+	password varChar(40) not null,
+	nickname varChar(25) not null,
+	email varChar(60)  not null,
+	cellphone varChar(25) not null,
+	address varChar(225) not null,
+	state boolean not null,
+	activecode varChar(599) ,
+	updatetime timestamp
+);
+/*一个用户可能有多个订单， 因此在订单里面存入是哪个用户ID*/
+create table Orders(
+	id varChar(40) primary key,
+	orderTime datetime not null,
+	receiverinfo varChar(250),
+	state boolean not null,
+	money decimal(8,2) not null,
+	user_id varChar(40),
+	foreign key(user_id) references user(id)
+);
+/*一个订单里面有多个订单项，因此订单项里面记住订单*/
+create table OrderItem(
+	id varChar(40) primary key,
+	buyQuantity int not null,
+	price decimal(8,2) not null,
+	product_id varChar(40),
+	foreign key(product_id) references product(id),
+	orders_id varChar(40),
+	foreign key(orders_id) references orders(id)
+);
+
+create table Admin(
+	id varChar(40) primary key,
+	adminname varChar(25) unique not null,
+	imgLocal varChar(500),
+	password varChar(40) not null,
+	description varChar(225)
+);
+
+create table privilege(
+	id varChar(40) primary key,
+	name varChar(25) not null,
+	description varChar(225)
+);
+
+create table role(
+	id varChar(40) primary key,
+	name varChar(20) unique not null,
+	description varChar(225)
+);
+
+create table role_privilege(
+	role_id varChar(40),
+	privilege_id varChar(40),
+	primary key(role_id,privilege_id),
+	foreign key(role_id) references role(id),
+	foreign key(privilege_id) references privilege(id)
+);
+
+create table Admin_role(
+	admin_id varchar(40),
+	role_id varChar(40),
+	primary key(admin_id , role_id),
+	foreign key(admin_id) references admin(id),
+	foreign key(role_id) references role(id)
+);
+

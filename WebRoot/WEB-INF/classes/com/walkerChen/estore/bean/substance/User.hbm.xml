@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="com.walkerChen.estore.bean.substance.User" table="User" lazy="false">
+    		<id name="id" column="id" length="40">
+    			<generator class="uuid"></generator>
+    		</id>
+    		<property name="username" column="username" length="40"></property>
+			<property name="realname" column="realname" length="40"></property>
+			<property name="identicalId" column="identicalId" length="20"></property>
+			<property name="password" column="password" length="40"></property>
+			<property name="sex" column="sex" length="10"></property>
+			<property name="birthday" column="birthday" length="20"></property>
+			<property name="updatetime" column="updatetime" type="java.sql.Date"></property>
+			<property name="email" column="email" length="50"></property>
+			<property name="cellphone" column="cellphone" length="25"></property>
+			<property name="address" column="address" length="50"></property>
+			<property name="payCode" column="payCode" length="7"></property>
+			<property name="state" column="state"></property>
+			<property name="activecode" column="activecode" length="500"></property>
+			<property name="iconHead" column="iconHead" length="500"></property>
+    	</class>
+    </hibernate-mapping>

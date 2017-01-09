@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.walkerChen.estore.bean.substance.OrderItem" table="OrderItem" >
+        <id name="id" column="id" length="40">
+            <generator class="uuid"/>
+        </id>
+        <property name="buyQuantity" column="buyQuantity" type="java.lang.Integer"></property>
+        <property name="subtotal" column="subtotal" type="java.lang.Double"></property>
+        <property name="color" column="color" ></property>
+        <property name="size" column="size" ></property>
+        <many-to-one name="product" class="com.walkerChen.estore.bean.substance.Product" column="product_id" cascade="all" fetch="join"></many-to-one> 
+    </class>
+</hibernate-mapping>

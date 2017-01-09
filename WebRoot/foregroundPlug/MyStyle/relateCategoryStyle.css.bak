@@ -1,0 +1,86 @@
+.shoppingCart{background: rgba(213,70,55,0.9);border: none;height: 275px;width: 400px;position: fixed;top: 10%;left: 55%;
+            box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(75, 75, 75, 1);border-radius: 3px;display:none;
+        }
+        .shoppingCart h3{position:relative;top:9px; color:white;width: 40%;margin: auto;padding: 3 0;
+        box-shadow: inset 0px 0px 10px rgba(225, 225, 225, 0.07), 0px 0px 15px rgba(225, 225, 225, 0.5); border-radius:3px;
+        }
+        .shopItem{height: 25px;line-height: 25px;text-align: center;position:relative;top:5px;margin:5 0;}
+        .shopItemName{width:37.3%;float:left;font-size:20px;overflow:hidden;height:25px;}
+        .shopItemQuantity{width:13.3%;float:left;}
+        .shopItemQuantity input{width:50px;height:100%;border:none; text-align:center;
+            box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(75, 75, 75, 0.3);border-radius: 3px;
+        }
+        .shopItemPrice{width:46.3%;float:left;font-size:20px;}
+        .shopItemPrice i{font-size: 25px;position:absolute; right:166px;cursor:pointer;}
+        .shopItemPrice span{ left: 1px;position: relative;}
+        .totalPrice div{float:left;font-size:20px;font-weight:bold;position:relative;left:23px;bottom:-9px;}
+        .totalPrice i{font-size: 25px;position:relative; margin:0 15;}
+        .totalPrice input{background: transparent;border: none;width: 125px;}
+        .totalPrice button{background:rgba(59,91,142,0.7); border-radius:2px; border:none; padding:2 5;
+        box-shadow: inset 0px 0px 10px rgba(225, 225, 225, 0.07), 0px 0px 15px rgba(225, 225, 225, 0.5);
+        }
+        .totalPrice button:hover{background:rgba(0,0,0,0.7);
+        -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    transition: .5s all;}
+    
+		.parcelHidden{z-index: 1;position: fixed;top: 165px; position: fixed;width:400px;left:-351px;}
+		.pull{position: absolute;background: transparent;width: 100%;height: 45px;}
+		.pull h3{display: inline-block;font-size: 45px;position: relative;left: 301px;width: 100px;text-align: right;background: rgba(0, 0, 1, 0.7);color:#00e58b;}
+		
+		.myScrollDiv{ width:301px;background:rgba(0, 0, 1, 0.7);border-radius: 1px; font-weight:bold;color:white;
+		}
+		
+		.w3ls_dresses_grid_left_grid h3{color:white;}
+		
+		ul{
+		list-style:none;
+		}
+		.pagination{
+			background:#ECECEC;border-radius:0px;width:100%;margin:0px;
+		}
+		.pagination .paging{
+			width: 66.66%;margin: auto; position:relative;top:25px;
+		}
+		.pagination .paging .recordPage{
+			position: relative;left: 50px;font-size: 25px;font-weight: bold;line-height: 50px;
+		}
+		.pagination .paging .recordPage ul{
+		    display: inline-block;
+		    background: rgba(0,0,0,0.2);
+		    padding-right: 40px;height:71px;
+		}
+		.pagination .paging .recordPage ul li{
+			float:left;position: relative;padding:0 15;text-align:center;background: rgba(0,0,0,0.3);margin:10 0;margin-left:25px;
+		}
+		.pagination .paging .recordPage ul li input[type=text] , #lowPrice,#heightPrice{
+		    width: 69px; height: 36px;position: relative;text-align:center; font-weight:bold; font-size:19px; border:none;
+		    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(75, 75, 75, 1);          	
+		}
+		
+		.pagination .paging .recordPage ul li input[type=submit]{
+		
+		    height: 36px;width: 36px; position: relative;text-align:center; font-weight:bold; font-size:19px;top:0px; line-height:30px;border:none;
+		    background:#00e58b;color:white;
+		}
+		.recordPage ul li a{
+			color:black;
+		}
+		
+		
+	.shopItemParam_ .mySize h4{
+				display: inline-block;
+				    padding: 5px;
+				    color: white;
+				box-shadow: inset 0px 0px 10px rgba(225, 225, 225, 0.07), 0px 0px 15px rgba(225, 225, 225, 0.5); border-radius:3px;
+			}
+			.shopItemParam_ .mySize ul li{
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    background: rgba(225,225,225,0.6);
+    margin-top:5px;
+     font-weight:bold;
+}

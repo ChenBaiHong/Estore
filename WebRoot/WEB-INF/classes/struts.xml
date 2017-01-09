@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<!-- 品牌的actionXMl文件 -->
+		<include file="brand.xml"/>
+		<!-- 分类界面的forgroundXMl文件 -->
+		<include file="category.xml"/>
+		<!-- 产品的productXMl文件 -->
+		<include file="product.xml"/>
+		<!-- 前台界面的forgroundXMl文件 -->
+		<include file="foreground.xml"/>
+	</struts>

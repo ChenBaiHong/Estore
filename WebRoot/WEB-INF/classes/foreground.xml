@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="foreground" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="sensitiveWordInterceptor" 
+			class="com.walkerChen.estore.actionInterceptor.SensitivelyVocabulary"></interceptor>
+			<interceptor-stack name="myInterceptor">
+				<interceptor-ref name="sensitiveWordInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 前台首页访问 -->
+		<action name="indexVisited" class="indexAction" method="indexVisited">
+			<result name="error">/WEB-INF/foreground/index.jsp</result><!-- 出现错误默认页 -->
+			<result name="indexSuccess">/WEB-INF/foreground/index.jsp</result>
+		</action>
+		<action name="singleProductProfileAction" class="indexAction" method="singleProductProfile">
+			<result name="error">/WEB-INF/foreground/index.jsp</result><!-- 出现错误默认页 -->
+			<result>/WEB-INF/foreground/singleProductProfile.jsp</result>
+		</action>
+		<action name="aboutUsAction" class="indexAction" method="aboutUsProfile">
+			<result name="error">/WEB-INF/foreground/index.jsp</result><!-- 出现错误默认页 -->
+			<result>/WEB-INF/foreground/aboutUs.jsp</result>
+		</action>
+		<action name="saleProminenceAction" class="indexAction" method="saleProminenceProduct">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<!-- //前台首页访问 -->
+		<!-- 购物车 -->
+		<action name="additionShoppingItemAction" class="shoppingCartAction" method="additionShoppingItemByAjax">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="singleShoppingItemProfile" class="shoppingCartAction" method="singleShoppingItemProfileByAjax">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="deleteShoppingItemAction" class="shoppingCartAction" method="deleteShoppingItemByAjax">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="shoppingCartDetailsAction" class="shoppingCartAction" method="shoppingCartDetails">
+			<result name="error">/WEB-INF/foreground/shoppingCart.jsp</result>
+			<result>/WEB-INF/foreground/shoppingCart.jsp</result>
+		</action>
+		<!-- //购物车 -->
+		<!-- 关联分类下的产品 -->
+		<action name="showCategoryRelateProductAction" class="relateAction" method="showCategoryRelateProduct">
+			<result name="error">/WEB-INF/foreground/relateCategoryItem.jsp</result><!-- 出现错误默认页 -->
+			<result>/WEB-INF/foreground/relateCategoryItem.jsp</result>
+		</action>
+		<action name="saleProminenceProductAction" class="relateAction" method="saleProminenceProduct">
+			<result name="error">/WEB-INF/foreground/relateCategoryItem.jsp</result><!-- 出现错误默认页 -->
+			<result>/WEB-INF/foreground/relateCategoryItem.jsp</result>
+		</action>
+		<!-- //关联分类下的产品 -->
+		<!-- 开始用户注册 -->
+		<action name="entryRegisterAction" class="registerAction" method="entryRegister">
+			<result name="EntrySuccess">/WEB-INF/foreground/register.jsp</result>
+		</action>
+		<action name="verifyNameAction" class="registerAction" method="verifyNameAjax">
+			<interceptor-ref name="myInterceptor"><!-- 拦截用户可能会输入的非法词汇 -->
+				<param name="includeMethods">verifyNameAjax</param>
+			</interceptor-ref>
+			<result type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="verifyEmailAction" class="registerAction" method="verifyEmailAjax">
+			<result type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="verifyCellphoneAction" class="registerAction" method="verifyCellphoneAjax">
+			<result type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<!-- 注册用户 -->
+		<action name="submitRegisterAction" class="registerAction" method="submitRegister">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<!-- 激活用户 -->
+		<action name="user_activeAction" class="registerAction" method="user_active">
+			<result>/WEB-INF/foreground/activeSuccess.jsp</result>
+		</action>
+		<!-- 用户登录 -->
+		<action name="userGoLogonAction" class="logonAction" method="userGoLogon">
+			<result>/WEB-INF/foreground/userLogin.jsp</result>
+		</action>
+		<action name="userLogonAction" class="logonAction" method="userLogon">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="userLogoutAction" class="logonAction" method="userLogout">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<!-- 开始后台的客服 -->
+		<action name="entryCustmerServiceAction" class="customerServiceAction" method="entryCustmerService">
+			<result type="json">
+					<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="entryCustmerServiceTarget" class="customerServiceAction">
+			<result>/WEB-INF/backstage/customerService/customerService.jsp</result>
+		</action>
+		<!-- 结束后台的客服 -->
+		<!-- 开始前台的客服 -->
+		<action name="customerServiceConsultAction" class="customerServiceAction" method="customerServiceConsult">
+			<result>/WEB-INF/foreground/customerService/customerService.jsp</result>
+		</action>
+		<action name="quitBrowserAction" class="customerServiceAction" method="quitBrowser">
+			<result type="json">
+					<param name="root">jsonData</param>
+			</result>
+		</action>
+		<!-- 结束后台的客服 -->
+	</package>
+</struts>

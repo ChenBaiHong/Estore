@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="com.walkerChen.estore.bean.substance.Category" table="category">
+    		<id name="cid" column="cid">
+    			<generator class="uuid"/>
+    		</id>
+    		<property name="name" column="name"></property>
+    		<property name="profile" column="profile"></property>
+    		<property name="profileImg" column="profileImg"></property>
+    		<property name="layer" column="layer"></property>
+    		<set name="subCategorys" cascade="all" fetch="join" lazy="false" order-by="layer asc">
+    			<key column="parentId"></key>
+    			<one-to-many class="com.walkerChen.estore.bean.substance.Category"></one-to-many>
+    		</set>
+    		<set name="productSet" table="prod_cate" inverse="false" lazy="false">
+    			<key column="cno"></key>
+    			<many-to-many class="com.walkerChen.estore.bean.substance.Product" column="pno"></many-to-many>
+    		</set>
+    	</class>
+    </hibernate-mapping>

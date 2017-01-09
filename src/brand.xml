@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="Brand" namespace="/" extends="json-default">
+			<action name="addBrandCheckAction" 
+			class="brandAction" 
+			method="addBrandCheck">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="addBrandCheckTarget" class="brandAction">
+				<result>/WEB-INF/backstage/brand/additionBrand.jsp</result>
+			</action>
+			<action name="saveBrandAction" class="brandAction" 
+			method="saveBrand">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="searchBrandCheckAction" class="brandAction"
+			method="findAllBrandCheck">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="searchBrandTarget" class="brandAction"
+			method="findAllBrand">
+				<result>/WEB-INF/backstage/brand/ergodicBrand.jsp</result>
+			</action>
+			<action name="pagingFindBrandAction" class="brandAction"
+			method="pagingFindBrand">
+				<result type="json">
+					<param name="root">pageBeanJSON</param>
+				</result>
+			</action>
+			<action name="likeBlurredSearchAction" class="brandAction"
+			method="likeBlurredSearchBrand">
+				<result type="json">
+					<param name="root">conditionParam</param>
+				</result>
+			</action>
+			<action name="updateBrandAction" class="brandAction"
+			method="updateBrand">
+				<result type="json">
+					<param name="root">verifyCheck</param>
+				</result>
+			</action>
+			<action name="showBrandImgAction" class="brandAction">
+				<result type="stream">
+					<param name="inputStream">${inputStream}</param>
+				</result>
+			</action>
+		</package>
+</struts>

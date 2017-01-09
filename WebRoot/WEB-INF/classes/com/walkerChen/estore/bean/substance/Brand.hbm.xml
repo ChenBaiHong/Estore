@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <!-- 
+    	分类的对象必须是立即检索对象，因为否则上面的关联它的表对象就会抛出无法代理该类的异常
+    	因此 lazy="false",立即检索不是代理对象
+     -->
+    	<class name="com.walkerChen.estore.bean.substance.Brand" table="Brand" lazy="false">
+			<id name="id" column="id" length="40" type="java.lang.String">
+				<generator class="uuid"/>
+			</id>
+			<property name="name" column="name" length="40"></property>
+			<property name="brandImg" column="brandImg" length="550"></property>
+			<property name="description" column="description" length="225"></property>
+    	</class>
+    </hibernate-mapping>

@@ -1,0 +1,231 @@
+@charset "utf-8";
+.shoppingCart{
+		background: #ECECEC;
+		border: none;
+        height:auto;
+        width:520px;
+		position: fixed;
+        border-radius: 2px;
+        display:none;
+      }
+      /*media all*/
+  
+.shoppingCart h3 {
+    position: relative;
+    top: 9px;
+    width: 40%;
+    margin: auto;
+    padding: 3 0;
+    border-radius: 3px;
+    font-family: 宋体;
+    font-weight: bold;
+    -webkit-border-bottom-left-radius:0x;
+}
+.shoppingCart .hander .handlerClose{
+	position: absolute;font-size: 36px;
+	right: 0px;z-index: 2;
+	background: #dddddd;
+	padding: 0 5;color:white;
+	-webkit-border-top-right-radius: 3px;
+	cursor: pointer;top:0px;
+}
+.shoppingCart .showShopItem .shopItem .parcelShowImg{
+	float: left;
+    width: auto;
+    padding: 5;
+    margin-left: 10px;
+    background: white;
+    border-radius: 3px;
+    position: relative;
+    top: -20px;
+} 
+  
+.shopItemParam .mySize h4{
+	display: inline-block;
+	padding: 5px;
+	color: white;
+	box-shadow: inset 0px 0px 10px rgba(225, 225, 225, 0.07), 0px 0px 15px rgba(225, 225, 225, 0.5); border-radius:3px;
+}
+.shopItemParam .mySize ul li{
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    background: rgba(225,225,225,0.6);
+    margin-top:5px;
+     font-weight:bold;
+}
+.shopItem .salePrice{
+    font-size: 17px;
+    display: inline-block;
+    background: rgba(225,225,225,0.8);
+    padding: 5 2;
+    margin: 5 10;
+    border-radius:1px;
+}
+.shopItem  .repertory{
+    padding: 10;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: darkgray;
+}
+.shopItem .salePrice h4{
+    font-family: 黑体;
+    font-weight: 200;
+}
+.shopItem .salePrice strong{
+    padding-left: 10px;
+    color: #b31d04;
+}
+
+/*media all*/
+.shopItemParam .mySize h4, .myColor h4, .myQuantity h4 {
+    display: inline-block;
+    padding-bottom: 8px;
+    color: #000000;
+    font-family: 华文中宋;
+    font-size: 22px;
+}
+
+
+/*media all*/
+.shopItemParam .mySize ul li, .myColor ul li {
+    float: left;
+    padding: 5 15;
+    color: black;
+    margin: 5 10;
+    background: rgba(0,0,0,0.1);
+    margin-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.shopItemParam ul li:hover{
+background:#58c9f3;color:white;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    transition: .5s all;
+}
+/*media all*/
+#quantity {
+    width: 54px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    margin: 0 15;
+}
+/*media all*/
+.totalPrice div {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    left: ;
+    font-family: 宋体;
+}
+      
+.totalPrice i{font-size: 25px;position:relative; margin:0 15;}
+.totalPrice input{background: transparent;border: none;width: 125px;}
+/*media all*/
+.totalPrice button {
+    border-radius: 2px;
+    border: none;
+    padding: 10 0;
+    width: 100%;
+    background-color: darkred;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px;
+}
+
+.totalPrice button:hover{
+	background:#b31d04;
+	-webkit-transition: .5s all;
+	-moz-transition: .5s all;
+	-o-transition: .5s all;
+	-ms-transition: .5s all;
+	transition: .5s all;
+}
+  
+.parcelHidden{z-index: 1;position: fixed;top: 165px; position: fixed;width:400px;left:-351px;}
+.pull{position: absolute;background: transparent;width: 100%;height: 45px;}
+.pull h3{display: inline-block;font-size: 45px;position: relative;left: 301px;width: 100px;text-align: right;background: rgba(0, 0, 1, 0.7);color:white;}
+
+.myScrollDiv{ width:301px;background:rgba(0, 0, 1, 0.7);border-radius: 1px; font-weight:bold;color:white;
+}
+
+.w3ls_dresses_grid_left_grid h3{color:white;}
+
+ul{
+list-style:none;
+}
+.pagination{
+	/* background:#ECECEC; */border-radius:0px;width:100%;margin:0px;
+}
+.pagination .paging{
+	position:relative;
+}
+.pagination .paging .recordPage{
+	position: relative;font-size: 25px;font-weight: bold;line-height: 50px;
+}
+/*media all*/
+.pagination .paging .recordPage {
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 50px;
+    display: inline-block;
+    margin: auto;
+}
+
+.pagination .paging .recordPage ul{
+    display: inline-block;
+}
+.pagination .paging .recordPage ul li{
+	float:left;position: relative;padding:0 15;text-align:center;background: #72d0eb;margin:10 0;margin-left:25px;
+}
+.pagination .paging .recordPage ul li:hover{
+	background:black;
+      -webkit-transition: .5s all;
+   -moz-transition: .5s all;
+   -o-transition: .5s all;
+   -ms-transition: .5s all;
+   transition: .5s all;
+}
+
+/*media all*/
+.pagination .paging .recordPage ul li input[type=text], #lowPrice, #heightPrice {width: 70px;: relative;text-align: center;font-weight: bold;font-size: 18px;border: 0.5px solid#dddddd;}
+
+/*media all*/
+.pagination .paging .recordPage ul li input[type=submit] {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    top: 0px;
+    line-height: 30px;
+    border: none;
+    background: #72d0eb;
+    color: white;
+    padding: 8px;
+}
+.recordPage ul li a{
+	color:white;
+}
+
+/*media all*/
+.myEcommerce_style ul li a i {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 1em;
+    border-radius: 20px;
+    background: red;
+}
+
+	

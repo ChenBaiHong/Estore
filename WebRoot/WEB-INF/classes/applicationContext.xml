@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="businessService" class="com.walkerChen.estore.businessService.BusinessServiceImpl"></bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="brandAction" class="com.walkerChen.estore.controlAction.BrandAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="productAction" class="com.walkerChen.estore.controlAction.ProductAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="indexAction" class="com.walkerChen.estore.controlAction.foreground.IndexAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="categoryAction" class="com.walkerChen.estore.controlAction.CategoryAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="shoppingCartAction" class="com.walkerChen.estore.controlAction.foreground.ShoppingCartAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="relateAction" class="com.walkerChen.estore.controlAction.foreground.RelateAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="registerAction" class="com.walkerChen.estore.controlAction.foreground.RegisterAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="logonAction" class="com.walkerChen.estore.controlAction.foreground.LogonAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	<!-- prototype是原型模式 ，因为防止线程并发 -->
+	<bean id="customerServiceAction" class="com.walkerChen.estore.controlAction.customerService.CustomerServiceAction" scope="prototype">
+		<property name="businessService" ref="businessService"></property>
+	</bean>
+	
+</beans>

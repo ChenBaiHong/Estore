@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="com.walkerChen.estore.bean.substance.Product" table="Product">
+    		<id name="id" column="id" length="40">
+    			<generator class="uuid"></generator>
+    		</id>
+    		<property name="name" column="name" length="40"></property>
+			<property name="salePrice" column="salePrice" type="java.lang.Double"></property>
+			<property name="inletPrice" column="inletPrice" type="java.lang.Double"></property>
+			<property name="produceLocal" column="produceLocal"></property>
+			<property name="productCompany" column="productCompany"></property>
+			<property name="inletDate" column="inletDate" length="40"></property>
+			<property name="putawayDate" column="putawayDate" length="40"></property>
+			<property name="iconurl" column="iconurl" length="1000"></property>
+			<property name="paramIconurl" column="paramIconurl" length="1000"></property>
+			<property name="quantity" column="quantity" type="java.lang.Integer"></property>
+			<property name="totalSaleNum" column="totalSaleNum" type="java.lang.Integer"></property>
+			<property name="description" column="description" length="255"></property>
+			<many-to-one name="brand" class="com.walkerChen.estore.bean.substance.Brand" 
+				column="brand_id" cascade="all"
+			 	fetch="join" lazy="no-proxy"></many-to-one>
+			<!-- <set name="categorySet" table="prod_cate"  lazy="false">
+    			<key column="pno"></key>
+    			<many-to-many class="com.walkerChen.estore.bean.substance.Category" column="cno"></many-to-many>
+    		</set> -->
+    	</class>
+    </hibernate-mapping>

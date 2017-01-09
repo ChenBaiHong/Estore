@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 多重部分的组合的最大大小，定义成全局常量型 -->
+	<constant name="struts.multipart.maxSize" value="20971520"></constant>
+	<package name="product" namespace="/" extends="json-default">
+		<action name="addProductCheckAction" class="productAction"
+		 method="addProductCheck">
+			<result type="json">
+					<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="addProductCheckTarget" class="productAction" method="fetchProductBrand">
+			<result>/WEB-INF/backstage/product/additionalProduct.jsp</result>
+		</action>
+		<action name="verifyDuplicateAction" class="productAction" method="verifyDuplicateName">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="addProductAction" class="productAction" method="addProduct">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="searchProductCheckAction" class="productAction" method="findPagingProductCheck">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="searchProductTarget" class="productAction" method="findPagingProduct">
+			<result>/WEB-INF/backstage/product/ergodicProduct.jsp</result>
+		</action>
+		<action name="showProductImgAction" class="productAction">
+			<result type="stream">
+					<param name="inputStream">${inputStream}</param>
+			</result>
+		</action>
+		<action name="showProductImgByAjaxAction" class="productAction" method="showProductImgByAjax">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="showPageSizeAction" class="productAction" method="showPagingProductBySize">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="productProfileAction" class="productAction" method="productProfile">
+			<result>/WEB-INF/backstage/product/productProfile.jsp</result>
+		</action>
+		<action name="updateProductImgAction" class="productAction" method="updateProductImg">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+		<action name="updateProductFormAction" class="productAction" method="updateProductForm">
+			<result type="json">
+				<param name="root">verifyCheck</param>
+			</result>
+		</action>
+	</package>
+</struts>
